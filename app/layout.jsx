@@ -29,15 +29,12 @@ export default function RootLayout({children}) {
     return (
         <html lang="en" className={`${roboto.variable}`}>
         <body className="bg-white flex flex-col px-4 py-2 min-h-screen">
-        {/* Render the NavBar component */}
         <header>
             <NavBar/>
         </header>
-        {/* Render the children within the main tag */}
         <main className="grow py-3">
             {children}
         </main>
-        {/* Render a footer with a link to the developer's GitHub profile */}
         <footer className="border-t py-3 text-center text-slate-500 text-xs">
             Made with love by {''}
             <a href="https://github.com/NatanTechofNY" target="_blank"
