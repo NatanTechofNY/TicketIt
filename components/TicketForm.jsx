@@ -3,9 +3,17 @@
 import {createTicketAction} from "@/lib/serverActions";
 import {useFormState} from "@/lib/hooks";
 
-export default function TicketForm({userName, userEmail}) {
+export default function TicketForm({userName, userEmail, userRole}) {
 
     const [state, handleSubmit] = useFormState(createTicketAction);
+
+    if (userRole === 'admin') {
+        return (
+            <p className="bg-red-500 text-white text-center rounded p-2">
+                Admins cannot submit tickets. Click on a ticket below to view/respond to it.
+            </p>
+        );
+    }
 
     return (
         <form onSubmit={handleSubmit} className="border bg-white flex flex-col gap-3 mt-3 px-3 py-2 rounded">

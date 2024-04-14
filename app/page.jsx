@@ -12,14 +12,15 @@ export default async function HomePage() {
         <>
             <Heading>Support Ticket</Heading>
             <ul className="flex flex-col gap-3">
-                {user ? (<TicketForm userName={user.name} userEmail={user.email}></TicketForm>) :
+                {user ? (<TicketForm userName={user.name} userEmail={user.email} userRole={user.role}></TicketForm>) :
                     (<li className="bg-white border rounded shadow w-80
                        hover:shadow-xl sm:w-full px-3 py-2">
+                        P
                         <p className={"text-center"}>
                             You must be signed in to submit a ticket.
                         </p>
                     </li>)}
-                <Suspense fallback={"<p>Loading</p>"}>
+                <Suspense fallback={"Loading..."}>
                     <TicketList></TicketList>
                 </Suspense>
             </ul>
