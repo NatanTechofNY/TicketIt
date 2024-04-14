@@ -1,11 +1,31 @@
-'use client';
-
+/**
+ * Import necessary actions and hooks
+ */
 import { loginAction } from '@/app/login/actions';
 import { useFormState } from '@/lib/hooks';
 
+/**
+ * LoginForm function is the main component of the login form.
+ * It uses the useFormState hook to manage the form state and handle form submission.
+ * The form consists of two input fields for email and password, and a submit button.
+ * If there is an error in the form state, an error message is displayed.
+ *
+ * @function
+ * @returns {JSX.Element} The rendered LoginForm component
+ */
 export default function LoginForm() {
+    /**
+     * Use the useFormState hook to manage the form state and handle form submission.
+     * The loginAction is passed as the argument to the useFormState hook.
+     * @type {Array}
+     */
     const [state, handleSubmit] = useFormState(loginAction);
 
+    /**
+     * Render the LoginForm component
+     * The form consists of two input fields for email and password, and a submit button.
+     * If there is an error in the form state, an error message is displayed.
+     */
     return (
         <form onSubmit={handleSubmit}
               className="border bg-white flex flex-col gap-2

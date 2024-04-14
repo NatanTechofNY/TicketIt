@@ -1,3 +1,6 @@
+/**
+ * Import necessary components and libraries
+ */
 import {notFound} from 'next/navigation';
 import Heading from '@/components/Heading';
 import ShareLinkButton from '@/components/ShareLinkButton';
@@ -7,16 +10,36 @@ import TicketReplyForm from "@/components/TicketReplyForm";
 import TicketReplyList from "@/components/TicketReplyList";
 import {getUserFromSession} from "@/lib/auth";
 
+/**
+ * TicketPage function is the main component of the ticket page.
+ * It fetches the ticket and user from the session and displays the appropriate UI based on the user's role and ticket status.
+ * If the user is not logged in or the ticket does not exist, a 404 error is returned.
+ *
+ * @async
+ * @function
+ * @param {Object} params - The parameters from the URL.
+ * @returns {JSX.Element} The rendered TicketPage component
+ */
 export default async function TicketPage({params: {id}}) {
 
+    /**
+     * Fetch the user and ticket from the session
+     * @type {Object}
+     */
     const user = await getUserFromSession();
-
     const ticket = await getTicket(id);
 
-    // Need to be signed in as an admin to view a ticket
+    /**
+     * If the user is not logged in or the ticket does not exist, return a 404 error
+     */
     if (!ticket || !user) {
         notFound();
     }
+
+    /**
+     * Render the TicketPage component
+     * The TicketReplyForm and TicketReplyList components are rendered with the user's and ticket's details.
+     */
     return (
         <>
             <Heading>Ticket #{ticket.id}: {ticket.subject}</Heading>

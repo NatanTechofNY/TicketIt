@@ -1,11 +1,33 @@
-'use client';
+'use client'
 
+/**
+ * Import necessary actions and hooks
+ */
 import { registerAction } from '@/app/register/actions';
 import { useFormState } from '@/lib/hooks';
 
+/**
+ * SignUpForm function is the main component of the registration form.
+ * It uses the useFormState hook to manage the form state and handle form submission.
+ * The form consists of three input fields for email, name, and password, and a submit button.
+ * If there is an error in the form state, an error message is displayed.
+ *
+ * @function
+ * @returns {JSX.Element} The rendered SignUpForm component
+ */
 export default function SignUpForm() {
+    /**
+     * Use the useFormState hook to manage the form state and handle form submission.
+     * The registerAction is passed as the argument to the useFormState hook.
+     * @type {Array}
+     */
     const [state, handleSubmit] = useFormState(registerAction);
 
+    /**
+     * Render the SignUpForm component
+     * The form consists of three input fields for email, name, and password, and a submit button.
+     * If there is an error in the form state, an error message is displayed.
+     */
     return (
         <form onSubmit={handleSubmit}
               className="border bg-white flex flex-col gap-2

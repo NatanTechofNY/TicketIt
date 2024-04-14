@@ -1,12 +1,25 @@
+/**
+ * Import necessary components
+ */
 import Heading from '@/components/Heading';
 
+/**
+ * NotFoundPage function is the main component of the 404 Not Found page.
+ * It renders a Heading component with the text "Not Found" and a paragraph with the text "Oops."
+ *
+ * @function
+ * @returns {JSX.Element} The rendered NotFoundPage component
+ */
 export default function NotFoundPage() {
-  return (
-    <>
-      <Heading>Not Found</Heading>
-      <p>
-        Oops, the page you requested only exists in a parallel universe.
-      </p>
-    </>
-  );
+    return (
+        <>
+            {/* Render the Heading component with the text "Not Found" */}
+            <Heading>Not Found</Heading>
+
+            {/* Render a paragraph with the text "Oops." */}
+            <p>
+                Oops.
+            </p>
+        </>
+    );
 }
