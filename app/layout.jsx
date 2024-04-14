@@ -20,10 +20,6 @@ export const metadata = {
  * RootLayout function is the main component of the root layout.
  * It renders the NavBar component and the children passed to it.
  * It also sets the font and global styles, and provides a footer with a link to the developer's GitHub profile.
- *
- * @function
- * @param {JSX.Element} children - The children to be rendered within the main tag.
- * @returns {JSX.Element} The rendered RootLayout component
  */
 export default function RootLayout({children}) {
     return (
