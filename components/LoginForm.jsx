@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Import necessary actions and hooks
  */
