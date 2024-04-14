@@ -1,5 +1,5 @@
 {
-  "name": "next-reviews",
+  "name": "ticketit",
   "private": true,
   "scripts": {
     "build": "next build",
